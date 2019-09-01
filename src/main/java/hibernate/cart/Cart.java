@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.Set;
 
 @Entity
-@Table(name="CART")
+@Table(name="CART", catalog = "OneToMany")
 public class Cart {
 
     @Id
@@ -20,7 +20,7 @@ public class Cart {
     @Column(name = "cart_color")
     private String color;
 
-    @OneToMany(mappedBy="cart")
+    @OneToMany(mappedBy="cart", cascade = CascadeType.ALL)
     private Set<Items> items = new HashSet<Items>();;
 
     public Long getId() {

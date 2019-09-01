@@ -7,7 +7,7 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name="ITEMS")
+@Table(name="ITEMS", catalog = "OneToMany")
 public class Items {
 
     @Id
